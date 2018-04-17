@@ -30,6 +30,8 @@ Game.prototype._rockWin = function(player1, player2){
 Game.prototype._scissorWin = function(player1, player2){
   if (player1 == 'Scissors' && player2 == 'Paper'){
     return "Player 1 wins!"
+  } else if (player1 == "Paper" && player2 == "Scissors"){
+    return "Player 2 wins!"
   }
 }
 
