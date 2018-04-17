@@ -14,7 +14,7 @@ Game.prototype.result = function(player1, player2){
 }
 
 Game.prototype._matchDraw = function(player1, player2){
-  if (player1 === player2){
+  if (player1.currentMove === player2.currentMove){
     return "Its a draw!"
   }
 }
@@ -22,23 +22,23 @@ Game.prototype._matchDraw = function(player1, player2){
 Game.prototype._rockWin = function(player1, player2){
   if (player1.currentMove == "Rock" && player2.currentMove == "Scissors"){
     return "Player 1 wins!"
-  } else if (player1 == "Scissors" && player2 == "Rock"){
+  } else if (player1.currentMove == "Scissors" && player2.currentMove == "Rock"){
     return "Player 2 wins!"
   }
 }
 
 Game.prototype._scissorWin = function(player1, player2){
-  if (player1 == 'Scissors' && player2 == 'Paper'){
+  if (player1.currentMove == 'Scissors' && player2.currentMove == 'Paper'){
     return "Player 1 wins!"
-  } else if (player1 == "Paper" && player2 == "Scissors"){
+  } else if (player1.currentMove == "Paper" && player2.currentMove == "Scissors"){
     return "Player 2 wins!"
   }
 }
 
 Game.prototype._paperWin = function(player1, player2){
-  if (player1 == 'Paper' && player2 == 'Rock'){
+  if (player1.currentMove == 'Paper' && player2.currentMove == 'Rock'){
     return 'Player 1 wins!'
-  } else if (player1 == "Rock" && player2 == "Paper"){
+  } else if (player1.currentMove == "Rock" && player2.currentMove == "Paper"){
     return "Player 2 wins!"
   }
 }
