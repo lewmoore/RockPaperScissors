@@ -17,4 +17,8 @@ describe('game', function(){
   it('Scissors beats Paper', function(){
     expect(game.result('Scissors', 'Paper')).toEqual('Player 1 wins!')
   })
+
+  it('Paper beats Rock', function(){
+    expect(game.result('Paper', 'Rock')).toEqual('Player 1 wins!')
+  })
 })
