@@ -1,6 +1,3 @@
-function Player(){
-};
-
-Player.prototype.move = function(move){
-  return move
+function Player(move){
+  this.currentMove = move
 };
