@@ -22,6 +22,8 @@ Game.prototype._matchDraw = function(player1, player2){
 Game.prototype._rockWin = function(player1, player2){
   if (player1 == "Rock" && player2 == "Scissors"){
     return "Player 1 wins!"
+  } else if (player1 == "Scissors" && player2 == "Rock"){
+    return "Player 2 wins!"
   }
 }
 
