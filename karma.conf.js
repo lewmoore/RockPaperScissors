@@ -6,6 +6,7 @@ module.exports = function(config) {
       'src/*.js',
       'test/*.js'
     ],
+    reporters: ['spec'],
     browsers: ['ChromeHeadless']
   })
 }
