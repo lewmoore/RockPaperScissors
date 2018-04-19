@@ -8,7 +8,7 @@ Game.prototype.result = function(player1, player2){
     return this._rockWin(player1, player2)
   } else if (this._scissorWin(player1, player2)) {
     return this._scissorWin(player1, player2)
-  } else {
+  } else if (this._matchDraw(player1, player2)) {
     return this._matchDraw(player1, player2)
   }
 }
