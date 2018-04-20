@@ -1,11 +1,9 @@
 describe('game', function(){
 
   var game
-  var player
 
   beforeEach(function(){
     game = new Game();
-    player = new Player()
   });
 
 
@@ -15,32 +13,38 @@ describe('game', function(){
   })
 
   it('P1: Rock beats Scissors', function(){
-    spyOn(game, '_rockWin').and.returnValue('Player 1 wins!')
-    expect(game.result('Rock', 'Scissors')).toEqual('Player 1 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Rock'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Scissors'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 1 wins!')
   })
 
   it('P1: Scissors beats Paper', function(){
-    spyOn(game, '_scissorWin').and.returnValue('Player 1 wins!')
-    expect(game.result('Scissors', 'Paper')).toEqual('Player 1 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Scissors'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Paper'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 1 wins!')
   })
 
   it('P1: Paper beats Rock', function(){
-    spyOn(game, '_paperWin').and.returnValue('Player 1 wins!')
-    expect(game.result('Paper', 'Rock')).toEqual('Player 1 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Paper'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Rock'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 1 wins!')
   })
 
   it("P2: Rock beats Scissors", function(){
-    spyOn(game, '_rockWin').and.returnValue('Player 2 wins!')
-    expect(game.result("Scissors", "Rock")).toEqual('Player 2 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Scissors'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Rock'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 2 wins!')
   })
 
   it("P2: Paper beats Rock", function(){
-    spyOn(game, '_paperWin').and.returnValue('Player 2 wins!')
-    expect(game.result("Rock", "Paper")).toEqual('Player 2 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Rock'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Paper'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 2 wins!')
   })
 
   it('P2: Scissors beats Paper', function(){
-    spyOn(game, '_scissorWin').and.returnValue('Player 2 wins!')
-    expect(game.result("Paper", "Scissors")).toEqual('Player 2 wins!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Paper'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Scissors'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Player 2 wins!')
   })
 })
