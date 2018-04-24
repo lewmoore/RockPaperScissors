@@ -8,8 +8,9 @@ describe('game', function(){
 
 
   it('can calculate if the game is a draw', function(){
-    spyOn(game, '_matchDraw').and.returnValue('Its a draw!')
-    expect(game.result("Rock", "Rock")).toEqual('Its a draw!')
+    player1 = jasmine.createSpyObj('player1', {'move': 'Rock'})
+    player2 = jasmine.createSpyObj('player2', {'move': 'Rock'})
+    expect(game.result(player1.move(), player2.move())).toEqual('Its a draw!')
   })
 
   it('P1: Rock beats Scissors', function(){

@@ -1,18 +1,22 @@
 class Game{
-  //
+
   // {
   //   player1: 'string'
   //   player2: 'string',
   //   result: ''
   // }
-  //
-  // var outcomes = [
-  //   { player1: 'Rock', player2: 'Scisssors', winner: 1 }
-  //   { player1: 'Rock', player2: 'Paper', winner: 2 }
-  // ]
 
   constructor(player1, player2){
-
+    var outcomes
+    this.outcomes = [
+      { player1: 'Rock', player2: 'Scisssors', winner: 1 },
+      { player1: 'Rock', player2: 'Paper', winner: 2 },
+      { player1: 'Scissors', player2: 'Paper', winner: 1 },
+      { player1: 'Scissors', player2: 'Rock', winner: 2 },
+      { player1: 'Paper', player2: 'Rock', winner: 1 },
+      { player1: 'Paper', player2: 'Scissors', winner: 2 }
+    ]
+    console.log(outcomes)
   }
 
   result(player1, player2){
