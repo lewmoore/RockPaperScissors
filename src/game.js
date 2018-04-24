@@ -1,63 +1,22 @@
 class Game{
-
-  // {
-  //   player1: 'string'
-  //   player2: 'string',
-  //   result: ''
-  // }
-
   constructor(player1, player2){
-    var outcomes
     this.outcomes = [
-      { player1: 'Rock', player2: 'Scisssors', winner: 1 },
+      { player1: 'Rock', player2: 'Scissors', winner: 1 },
       { player1: 'Rock', player2: 'Paper', winner: 2 },
       { player1: 'Scissors', player2: 'Paper', winner: 1 },
       { player1: 'Scissors', player2: 'Rock', winner: 2 },
       { player1: 'Paper', player2: 'Rock', winner: 1 },
-      { player1: 'Paper', player2: 'Scissors', winner: 2 }
+      { player1: 'Paper', player2: 'Scissors', winner: 2 },
     ]
-    console.log(outcomes)
   }
 
   result(player1, player2){
-    if (this._paperWin(player1, player2)) {
-      return this._paperWin(player1, player2)
-    } else if (this._rockWin(player1, player2)) {
-      return this._rockWin(player1, player2)
-    } else if (this._scissorWin(player1, player2)) {
-      return this._scissorWin(player1, player2)
-    } else if (this._matchDraw(player1, player2)) {
-      return this._matchDraw(player1, player2)
+    for (var i = 0; i < this.outcomes.length; i++) {
+        if (this.outcomes[i].player1 == player1 && this.outcomes[i].player2 == player2) {
+          return 'Player ' + this.outcomes[i].winner + ' wins!'
+        } else if (player1 === player2){
+          return 'Its a draw!'
+        }
+      }
     }
-  }
-
-  _matchDraw(player1, player2){
-    if (player1 === player2){
-      return "Its a draw!"
-    }
-  }
-
-  _rockWin(player1, player2){
-    if (player1 == "Rock" && player2 == "Scissors"){
-      return "Player 1 wins!"
-    } else if (player1 == "Scissors" && player2 == "Rock"){
-      return "Player 2 wins!"
-    }
-  }
-
-  _scissorWin(player1, player2){
-    if (player1 == 'Scissors' && player2 == 'Paper'){
-      return "Player 1 wins!"
-    } else if (player1 == "Paper" && player2 == "Scissors"){
-      return "Player 2 wins!"
-    }
-  }
-
-  _paperWin(player1, player2){
-    if (player1 == 'Paper' && player2 == 'Rock'){
-      return 'Player 1 wins!'
-    } else if (player1 == "Rock" && player2 == "Paper"){
-      return "Player 2 wins!"
-    }
-  }
 }

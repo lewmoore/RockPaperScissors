@@ -16,6 +16,7 @@ describe('game', function(){
   it('P1: Rock beats Scissors', function(){
     player1 = jasmine.createSpyObj('player1', {'move': 'Rock'})
     player2 = jasmine.createSpyObj('player2', {'move': 'Scissors'})
+    // console.log(player1.move(), player2.move())
     expect(game.result(player1.move(), player2.move())).toEqual('Player 1 wins!')
   })
 
