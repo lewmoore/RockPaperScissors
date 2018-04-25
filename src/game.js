@@ -14,9 +14,8 @@ class Game{
     for (var i = 0; i < this.outcomes.length; i++) {
         if (this.outcomes[i].player1 == player1 && this.outcomes[i].player2 == player2) {
           return 'Player ' + this.outcomes[i].winner + ' wins!'
-        } else if (player1 === player2){
-          return 'Its a draw!'
         }
       }
-    }
+    return 'Its a draw!'
+  }
 }
