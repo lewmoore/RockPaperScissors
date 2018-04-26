@@ -1,5 +1,5 @@
 class Game{
-  constructor(player1, player2){
+  constructor(){
     this.outcomes = [
       { player1: 'Rock', player2: 'Scissors', winner: 1 },
       { player1: 'Rock', player2: 'Paper', winner: 2 },
